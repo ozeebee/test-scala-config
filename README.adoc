@@ -1,0 +1,36 @@
+= Test Scala Config
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:toc:
+//:toc-position: left
+:toclevels: 4
+
+This is a sample project to demonstrate how to use a "multi-environment" configuration setup for Scala with https://github.com/typesafehub/config[TypeSafe's Config library].
+
+See this http://stackoverflow.com/a/33261928/335615[Stack Overflow thread] for more info.
+
+== Requirements
+
+* Scala 2.11
+* SBT 0.13
+
+== Configuration files
+
+* the link:src/main/resources/application.conf[DEV configuration]
+* the link:src/main/resources/prod.conf[PROD configuration] (note that the DEV is in included, so you only have to override what you want)
+
+== Running in DEV environment
+
+The DEV environment is the default one, just start an SBT session, and `run` the main program.
+
+== Running in PROD environment
+
+Simply specify the TypeSafe configuration file to use by passing the `config.resource` system property (documented https://github.com/typesafehub/config#standard-behavior[here^]).
+
+This can be done either by passing the system property when starting the SBT session `sbt -Dconfig.resource=prod.conf` or by editing the `build.sbt` file and adding/uncommenting these lines:
+
+----
+fork := true
+javaOptions := Seq("-Dconfig.resource=prod.conf")
+----
