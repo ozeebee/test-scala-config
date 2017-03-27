@@ -4,10 +4,10 @@ import org.slf4j.LoggerFactory
 import com.typesafe.config.ConfigFactory
 
 object TestScalaConfig {
-	lazy val log = LoggerFactory.getLogger(this.getClass)
+  lazy val log = LoggerFactory.getLogger(this.getClass)
 
-	def main(args: Array[String]) {
-		log.info("***** Starting *****")
+  def main(args: Array[String]) {
+    log.info("***** Starting *****")
 
     log.info("Application configuration")
     val conf = ConfigFactory.load()
@@ -16,7 +16,7 @@ object TestScalaConfig {
     log.info("myapp.server-port = " + conf.getInt("myapp.server-port"))
     log.info("myapp.some-other-setting = " + conf.getString("myapp.some-other-setting"))
 
-		log.info("***** Finished *****")
-	}
+    log.info("***** Finished *****")
+  }
 
 }
