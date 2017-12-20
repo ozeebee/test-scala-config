@@ -22,7 +22,7 @@ See this http://stackoverflow.com/a/33261928/335615[Stack Overflow thread] for m
 
 == Running in DEV environment
 
-The DEV environment is the default one, just start an SBT session, and `run` the main program.
+The DEV environment is the default one, just start an SBT session and `run` the main program.
 
 == Running in PROD environment
 
